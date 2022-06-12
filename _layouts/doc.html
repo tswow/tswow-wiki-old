@@ -40,6 +40,14 @@ layout: compress
 
     {% include custom_head.html %}
 
+    <!-- Doc meta generator -->
+    <script>
+        const page_url = "{{page.url}}";
+        const doc_pages = [];
+    </script>
+    {% for page in site.doc %}
+        <script>doc_pages.push({title: "{{page.title}}", url: "{{page.url}}"})</script>
+    {% endfor %}
 </head>
 
 <body class="body-{{ page.color }}">
@@ -116,6 +124,7 @@ layout: compress
     <script type="text/javascript" src="{{ '/assets/plugins/lightbox/dist/ekko-lightbox.min.js'            | prepend: site.baseurl }}"></script>
     <script type="text/javascript" src="{{ '/assets/plugins/jquery-match-height/jquery.matchHeight-min.js' | prepend: site.baseurl }}"></script>
     <script type="text/javascript" src="{{ '/assets/js/main.js'                                            | prepend: site.baseurl }}"></script>
+    <script type="text/javascript" src="{{ '/assets/js/docs.js'                                            | prepend: site.baseurl }}"></script>
 
 </body>
 </html>
