@@ -1,17 +1,18 @@
 ---
 layout: home
-title: Home
+title: Submenu
 tagline: |
   The WoTLK Modding Framework
-heading: TSWoW Wiki
+heading: Submenu
+icon:
+  type: fa
+  name: fa-paper-plane
+color: green
 navigation:
   - /start
-  - /submenu
 ---
 
-Welcome to prettyDocs.
-This landing page is an example of how you can use a card view to present segments of your documentation.
-You can customise the icon fonts based on your needs.
+Welcome to the submenu.
 
 <div class="cta-container">
 
