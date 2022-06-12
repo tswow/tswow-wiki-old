@@ -24,7 +24,7 @@ $(document).ready(function() {
         //store hash
         var target = this.hash;
         e.preventDefault();
-		$('body').scrollTo(target, 800, {offset: 0, 'axis':'y'});
+		$('body').scrollTo(target, 0, {offset: 0, 'axis':'y'});
 		// display anchor
 		document.location.hash = target;
 	});
