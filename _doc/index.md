@@ -5,13 +5,15 @@ tagline: |
   The WoTLK Modding Framework
 heading: TSWoW Wiki
 navigation:
-  - /start
-  - /submenu
+  - /installation/index
+  - /introduction/index
+  - /demo
+  - /documentation/index
+  - /api/index
+  - /discord
 ---
 
-Welcome to prettyDocs.
-This landing page is an example of how you can use a card view to present segments of your documentation.
-You can customise the icon fonts based on your needs.
+Welcome to the TSWoW Wiki.
 
 <div class="cta-container">
 
