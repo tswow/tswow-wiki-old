@@ -101,7 +101,7 @@ function removeModuleLinks(str: string) {
 { // Generate LiveScript API
     {
         console.log('Generating LiveScript API')
-        if(process.argv.includes('rebuild') || !fs.existsSync(LIVESCRIPT_API)) {
+        {
             fs.copyFileSync(GDTS_SOURCE,GLOBAL_D_TS);
 
             // hack number types
@@ -472,12 +472,11 @@ function removeModuleLinks(str: string) {
 
                 if(isMacro) {
                     macros_out += str + '\n___'
-                    findMethods('Macro','',str,'macros',false);
+                    findMethods('Macro','livescripts',str,'livescripts/macros',false);
                 } else {
                     functions_out += str + '\n___'
-                    findMethods('Function','',str,'functions',false);
+                    findMethods('Function','livescripts',str,'livescripts/functions',false);
                 }
-
             })
             fs.writeFileSync(path.join(LIVESCRIPT_API,'functions.md'),functions_out)
             fs.writeFileSync(path.join(LIVESCRIPT_API,'macros.md'),macros_out)
