@@ -3,7 +3,7 @@
 #
 remote_theme: LeakyAbstractions/pretty-docs
 url: https://leakyabstractions.github.io
-baseurl: /pretty-docs
+baseurl: /test
 title: &site_title Pretty Docs
 description: &site_description Free Bootstrap theme for your project documentation
 branding:
