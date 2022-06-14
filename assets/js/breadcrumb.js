@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const breadcrumbs = window.location.href
         .split(BASE_URL)[1]
         .split('/')
+        .map(x=>x.split('#')[0])
         .filter(x=>!x.endsWith('index.html'))
         .filter(x=>x.length>0);
 
