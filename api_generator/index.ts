@@ -225,7 +225,7 @@ function removeModuleLinks(str: string) {
                         let cat = searchbar_results['Event'] || (searchbar_results['Event'] = {})
                         cat[`${filenameToName(x)}.${segName}`] = {
                             description: summary,
-                            url: `api/livescripts/events/${filenameToName(x)}#${segName}`
+                            url: `api/livescripts/events/${filenameToName(x)}#${segName.toLowerCase()}`
                         }
 
                         str_out += '\n'
