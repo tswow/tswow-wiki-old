@@ -2,6 +2,8 @@ import * as child_process from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
+// Yes, the entirety of our API generation is a regex hack. Have fun maintaining this.
+
 const BUILD_DIR = './build'
 const LIVESCRIPT_API = path.join(BUILD_DIR,'livescript_api')
 const GDTS_SOURCE = 'tswow/tswow-scripts/wotlk/global.d.ts'
@@ -20,7 +22,21 @@ const MAX_DESCRIPTION_LENGTH = 120
 const enum_descriptions: {[key: string]: string} = {}
 const class_descriptions: {[key: string]: string} = {}
 const event_descriptions: {[key: string]: string} = {}
-const method_descriptions: {[key: string]: string} = {}
+const searchbar_results: {[key: string]: {[key: string]: {description: string, url: string}}} = {};
+
+function findMethods(type: string, prefix: string, file: string, filename: string, isMethod: boolean) {
+    let filenameShort = path.basename(filename).replace('.md','')
+    Array.from(file.matchAll(/\n### (.+)/g)).forEach(x=>{
+        let name = x[1].split('\\').join('')
+        let id = `${isMethod?`${filenameShort}::`:''}${name}`
+        let cat = searchbar_results[`API: ${type}`] || (searchbar_results[`API: ${type}`] = {})
+        cat[id] = {description:'', url: `api/${prefix.length > 0 ? `${prefix}/`:''}${filenameShort}#${name}`}
+    })
+}
+
+function filenameToName(filename: string) {
+    return path.basename(filename).replace('.md','')
+}
 
 // Assumes the >#< header is intact
 function addDescription(headerToken: string, collection: {[key: string]: string}, filename: string, str: string) {
@@ -46,7 +62,7 @@ function addDescription(headerToken: string, collection: {[key: string]: string}
 // Links to "module" should not be used
 function removeModuleLinks(str: string) {
     while(true) {
-        let m = str.match(/\[(.+?)\]\((?:\.\.\/|)modules(?:\.md|).+?\)/)
+        let m = str.match(/\[([a-zA-Z\-_0-9\.`]+?)\]\((?:\.\.\/|)modules(?:\.md|).+?\)/)
         if(m) {
             str = str.replace(m[0],m[1])
         } else {
@@ -165,6 +181,7 @@ function removeModuleLinks(str: string) {
                     let param_descriptions: {[key: string]: string} = {}
 
                     let [comment,params] = segment.split('#### Parameters')
+
                     { // Find all event param comments
                         const param_matches = Array.from(comment
                             .matchAll(/\*\*`event_param`\*\* *(.+?) +(.+|)/g))
@@ -203,10 +220,18 @@ function removeModuleLinks(str: string) {
                             .map(x=>x.split(': '))
                             .map(([name,type]) => [name.split('`').join('').split(' ').join(''),type])
 
+                        let summary = `${segName}((${args.map(x=>`${x[0]}`).join(',')}) => void`
+
+                        let cat = searchbar_results['Event'] || (searchbar_results['Event'] = {})
+                        cat[`${filenameToName(x)}.${segName}`] = {
+                            description: summary,
+                            url: `api/livescripts/events/${filenameToName(x)}#${segName}`
+                        }
+
                         str_out += '\n'
                                 + '{: .code-example }\n'
                                 + '`'
-                                + `${segName}((${args.map(x=>`${x[0]}`).join(',')}) => void`
+                                + summary
                                 + '`\n'
 
                         str_out += '#### Event Parameters\n'
@@ -365,6 +390,7 @@ function removeModuleLinks(str: string) {
                 }
 
                 str = str.split('\n### ').join('\n{: .api-section }\n### ')
+                findMethods('Method','livescripts/classes',str,x,true);
 
                 // Save
                 fs.writeFileSync(x,str);
@@ -401,6 +427,7 @@ function removeModuleLinks(str: string) {
             let modules = fs.readFileSync(path.join(LIVESCRIPT_API,'modules.md'),'utf-8')
             modules = removeModuleLinks(modules);
             modules = modules.split('\n## Functions')[1]
+
             modules.split('___').forEach(str=>{
                 str = str.split('\n\n|').join('\n\n{: .table .api-table .table-bordered}\n|')
                 str = str.split(/\| :-.+/).join('|-')
@@ -445,8 +472,10 @@ function removeModuleLinks(str: string) {
 
                 if(isMacro) {
                     macros_out += str + '\n___'
+                    findMethods('Macro','',str,'macros',false);
                 } else {
                     functions_out += str + '\n___'
+                    findMethods('Function','',str,'functions',false);
                 }
 
             })
@@ -514,13 +543,14 @@ ${fs.readdirSync(path.join(LIVESCRIPT_API,section))
 
 {
     // Generate searchbar results
-    let searchbar_results: {[key: string]: {[key: string]: string}} = {};
     [{type:'Event',values:event_descriptions},{type: 'Class',values:class_descriptions},{type:'Enum',values:enum_descriptions}].forEach(({type,values})=>{
+        let t = type;
         type = `API : ${type}`
         for(const [key,value] of Object.entries(values)) {
             let category = (searchbar_results[type] || (searchbar_results[type] = {}))
-            category[key] = value;
+            category[key] = {description:value,url:`api/livescripts/${t.toLowerCase()}/${key}`};
         }
     })
-    console.log(searchbar_results)
+    fs.writeFileSync('./build/searchbar.json',JSON.stringify(searchbar_results,null,4))
+    fs.writeFileSync('../_includes/searchbar_results.html',`<script> search_results = ${JSON.stringify(searchbar_results)} </script>`)
 }

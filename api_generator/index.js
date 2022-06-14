@@ -22,6 +22,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var child_process = __importStar(require("child_process"));
 var fs = __importStar(require("fs"));
 var path = __importStar(require("path"));
+// Yes, the entirety of our API generation is a regex hack. Have fun maintaining this.
 var BUILD_DIR = './build';
 var LIVESCRIPT_API = path.join(BUILD_DIR, 'livescript_api');
 var GDTS_SOURCE = 'tswow/tswow-scripts/wotlk/global.d.ts';
@@ -36,7 +37,19 @@ var MAX_DESCRIPTION_LENGTH = 120;
 var enum_descriptions = {};
 var class_descriptions = {};
 var event_descriptions = {};
-var method_descriptions = {};
+var searchbar_results = {};
+function findMethods(type, prefix, file, filename, isMethod) {
+    var filenameShort = path.basename(filename).replace('.md', '');
+    Array.from(file.matchAll(/\n### (.+)/g)).forEach(function (x) {
+        var name = x[1].split('\\').join('');
+        var id = "" + (isMethod ? filenameShort + "::" : '') + name;
+        var cat = searchbar_results["API: " + type] || (searchbar_results["API: " + type] = {});
+        cat[id] = { description: '', url: "api/" + (prefix.length > 0 ? prefix + "/" : '') + filenameShort + "#" + name };
+    });
+}
+function filenameToName(filename) {
+    return path.basename(filename).replace('.md', '');
+}
 // Assumes the >#< header is intact
 function addDescription(headerToken, collection, filename, str) {
     filename = path.basename(filename);
@@ -60,7 +73,7 @@ function addDescription(headerToken, collection, filename, str) {
 // Links to "module" should not be used
 function removeModuleLinks(str) {
     while (true) {
-        var m = str.match(/\[(.+?)\]\((?:\.\.\/|)modules(?:\.md|).+?\)/);
+        var m = str.match(/\[([a-zA-Z\-_0-9\.`]+?)\]\((?:\.\.\/|)modules(?:\.md|).+?\)/);
         if (m) {
             str = str.replace(m[0], m[1]);
         }
@@ -203,10 +216,16 @@ function removeModuleLinks(str) {
                             var name = _a[0], type = _a[1];
                             return [name.split('`').join('').split(' ').join(''), type];
                         });
+                        var summary = segName + "((" + args.map(function (x) { return "" + x[0]; }).join(',') + ") => void";
+                        var cat = searchbar_results['Event'] || (searchbar_results['Event'] = {});
+                        cat[filenameToName(x) + "." + segName] = {
+                            description: summary,
+                            url: "api/livescripts/events/" + filenameToName(x) + "#" + segName
+                        };
                         str_out += '\n'
                             + '{: .code-example }\n'
                             + '`'
-                            + (segName + "((" + args.map(function (x) { return "" + x[0]; }).join(',') + ") => void")
+                            + summary
                             + '`\n';
                         str_out += '#### Event Parameters\n';
                         if (args.length == 0) {
@@ -350,6 +369,7 @@ function removeModuleLinks(str) {
                     cur -= 1;
                 }
                 str = str.split('\n### ').join('\n{: .api-section }\n### ');
+                findMethods('Method', 'livescripts/classes', str, x, true);
                 // Save
                 fs.writeFileSync(x, str);
             });
@@ -416,9 +436,11 @@ function removeModuleLinks(str) {
                 }
                 if (isMacro) {
                     macros_out_1 += str + '\n___';
+                    findMethods('Macro', '', str, 'macros', false);
                 }
                 else {
                     functions_out_1 += str + '\n___';
+                    findMethods('Function', '', str, 'functions', false);
                 }
             });
             fs.writeFileSync(path.join(LIVESCRIPT_API, 'functions.md'), functions_out_1);
@@ -461,15 +483,16 @@ function makeAPIIndex(section, title, excerpt, descriptions) {
 }
 {
     // Generate searchbar results
-    var searchbar_results_1 = {};
     [{ type: 'Event', values: event_descriptions }, { type: 'Class', values: class_descriptions }, { type: 'Enum', values: enum_descriptions }].forEach(function (_a) {
         var type = _a.type, values = _a.values;
+        var t = type;
         type = "API : " + type;
         for (var _i = 0, _b = Object.entries(values); _i < _b.length; _i++) {
             var _c = _b[_i], key = _c[0], value = _c[1];
-            var category = (searchbar_results_1[type] || (searchbar_results_1[type] = {}));
-            category[key] = value;
+            var category = (searchbar_results[type] || (searchbar_results[type] = {}));
+            category[key] = { description: value, url: "api/livescripts/" + t.toLowerCase() + "/" + key };
         }
     });
-    console.log(searchbar_results_1);
+    fs.writeFileSync('./build/searchbar.json', JSON.stringify(searchbar_results, null, 4));
+    fs.writeFileSync('../_includes/searchbar_results.html', "<script> search_results = " + JSON.stringify(searchbar_results) + " </script>");
 }
