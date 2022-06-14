@@ -60,11 +60,7 @@ layout: compress
 
                 {% include branding.html %}
 
-                <!-- BREADCRUMB -->
-                <ol class="breadcrumb">
-                    <li><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
-                    <li class="active">{{ page.title }}</li>
-                </ol>
+                {% include breadcrumbs.html %}
 
                 {% if site.share.github %}
                   {% include github_forkme.html %}

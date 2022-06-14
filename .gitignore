@@ -1,3 +1,8 @@
 .DS_Store
 config.codekit
 _site
+api_generator/node_modules
+api_generator/tswow-build
+api_generator/tswow-install
+api_generator/tswow
+api_generator/build

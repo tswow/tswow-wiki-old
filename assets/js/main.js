@@ -43,6 +43,4 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).ekkoLightbox();
     });
-
-
 });

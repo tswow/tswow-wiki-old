@@ -28,7 +28,6 @@ kramdown:
 #
 owner:
   name: Guillermo Calvo
-  twitter: &site_owner_twitter gcalvo
   copyright:
     notice: Lorem Ipsum
     author: "[Guillermo Calvo](https://guillermo.in/)"
@@ -95,3 +94,5 @@ defaults:
       type: pages
     values:
       layout: doc
+
+exclude: ['_site','api_generator']

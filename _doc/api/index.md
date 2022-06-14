@@ -11,5 +11,4 @@ icon:
 color: green
 navigation:
   - /api/livescripts/index
-  - /api/addon/index
 ---

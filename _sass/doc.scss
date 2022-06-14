@@ -140,6 +140,18 @@
     margin-bottom: 30px;
 }
 
+.language-plaintext {
+    background-color: #6074d5;
+}
+
+.code-example-block {
+    background-color: #727272;
+}
+
+.api-section {
+    background-color: #f1f1f1;
+}
+
 .callout-block {
     padding: 30px;
     @include border-radius(4px);
@@ -219,6 +231,21 @@
     background-color: $smoky-white;
 }
 
+.event-table {
+    margin-bottom: 60px;
+}
+
+table {
+    background-color: #f1f1f1
+}
+
+th {
+    background-color: #e7e7e7
+}
+
+hr {
+    margin-top: 60px
+}
 
 .screenshot-holder {
     margin-top: 15px;
@@ -427,6 +454,14 @@
 /* Sidebar */
 .doc-sidebar {
     width: 200px;
+}
+
+/* ugly hack, breaks on some resolutions */
+.doc-sidebar-list {
+    left: -100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 300px;
 }
 
 .doc-menu {
