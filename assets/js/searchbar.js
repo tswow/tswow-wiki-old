@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function(){
                             searchResultItems.append(`
                             <tr>
                                 <td class="search-results-td">
-                                    <a href="${BASE_URL}/${url.toLowerCase()}">${id}</a>
+                                    <a href="${BASE_URL}/${url}">${id}</a>
                                 </td>
                                 <td class="search-results-td">
                                     ${category}
