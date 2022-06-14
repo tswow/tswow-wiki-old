@@ -1,2 +1,4 @@
-addon
-livescripts
+addon/*
+livescripts/*
+!livescripts/index.md
+!addon/index.md
