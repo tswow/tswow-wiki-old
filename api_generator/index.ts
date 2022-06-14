@@ -30,7 +30,7 @@ function findMethods(type: string, prefix: string, file: string, filename: strin
         let name = x[1].split('\\').join('')
         let id = `${isMethod?`${filenameShort}::`:''}${name}`
         let cat = searchbar_results[`API: ${type}`] || (searchbar_results[`API: ${type}`] = {})
-        cat[id] = {description:'', url: `api/${prefix.length > 0 ? `${prefix}/`:''}${filenameShort}#${name}`}
+        cat[id] = {description:'', url: `api/${prefix.length > 0 ? `${prefix}/`:''}${filenameShort}#${name.toLowerCase()}`}
     })
 }
 
