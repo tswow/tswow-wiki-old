@@ -1,11 +1,12 @@
 const MAX_RESULTS = 25
 
 document.addEventListener("DOMContentLoaded", function(){
-    $('<div class="search-results"> <table class="table table-bordered search-results-table"> <tbody class="search-result-items"> </tbody> </table></div>').insertBefore('.doc-wrapper')
+    $('<div class="search-results"> <table class="table table-bordered search-results-table"> <tbody class="search-result-items"> </tbody> </table></div>')
+        .insertBefore('.doc-wrapper,.cards-section')
     $('.searchbar').on('input',function() {
         const searchResults = $('.search-results');
         const searchResultItems = $('.search-result-items')
-        const docWrapper = $('.doc-wrapper');
+        const docWrapper = $('.doc-wrapper,.cards-section');
 
         // hack: dodging the self-inflicted hack of setting tables to 85%
         $('.search-results-table').css('width','100%')
