@@ -17,20 +17,21 @@ $(document).ready(function() {
         .forEach(x=>{
             const is_cur_page = x.url == page_url
             if(!is_cur_page) return;
+            /*
             $('#doc-menu').append(`
             <li class="doc-sidebar-list">
                 <a href="/pretty-docs${x.url}" ${is_cur_page ? 'style="font-weight: bold;"' : ''}> ${x.title} </a>
                 <ul ${is_cur_page ? 'id="submenu"':''} class="nav doc-sub-menu"></ul>
             </li>
             `)
+            */
         })
 
     function header_base(node) {
         node.css('font-weight','bold')
             .css('margin-bottom','20px')
             .css('padding-bottom','2px')
-
-        $('#submenu').append(`<li><a href=#${node.attr('id')}>${node.text()}</a></li>`)
+        //$('#submenu').append(`<li><a href=#${node.attr('id')}>${node.text()}</a></li>`)
     }
 
     $(".code-example")
@@ -78,9 +79,11 @@ $(document).ready(function() {
 
         let diff = Math.min(MAX_DIFF,BASE_WINDOW_WIDTH-Math.min(BASE_WINDOW_WIDTH,window.innerWidth))
 
+        let scroll_offset = Math.min(document.scrollTop,80)
+
         list.css('left',`${BASE_X_OFFSET+diff}px`);
         list.css('width',`${BASE_SIDEBAR_WIDTH-diff}px`);
-        list.css('height',`${window.innerHeight-20}px`)
+        list.css('height',`${window.innerHeight-20-scroll_offset}px`)
     }
     
     document.addEventListener('scroll',updateSidebar);
