@@ -1,5 +1,23 @@
 const MAX_RESULTS = 25
 
+function removeTrailingAnchor(str) {
+    let last = str.lastIndexOf('#')
+    if(last < 0) return str;
+    return str.substring(0,last);
+}
+
+function click_search_result(evt) {
+    let linkHref = removeTrailingAnchor(evt.getAttribute('href'))
+    let windowHref = removeTrailingAnchor(window.location.href)
+    if(windowHref.endsWith(linkHref)) {
+        const searchResults = $('.search-results');
+        searchResults.hide();
+        const docWrapper = $('.doc-wrapper,.cards-section');
+        docWrapper.show();
+    }
+    return true;
+}
+
 document.addEventListener("DOMContentLoaded", function(){
     $('<div class="search-results"> <table class="table table-bordered search-results-table"> <tbody class="search-result-items"> </tbody> </table></div>')
         .insertBefore('.doc-wrapper,.cards-section')
@@ -29,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function(){
                             searchResultItems.append(`
                             <tr>
                                 <td class="search-results-td">
-                                    <a href="${BASE_URL}/${url}">${id}</a>
+                                    <a onclick = "return click_search_result(this);" href="${BASE_URL}/${url}">${id}</a>
                                 </td>
                                 <td class="search-results-td">
                                     ${category}
