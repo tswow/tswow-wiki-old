@@ -7,7 +7,7 @@ tagline: |
 heading: TSWoW Wiki
 icon:
   type: fa
-  name: fa-paper-plane
+  name: fa-book
 color: green
 navigation:
   - /documentation/page

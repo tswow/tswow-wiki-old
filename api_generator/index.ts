@@ -404,7 +404,7 @@ function removeModuleLinks(str: string) {
                 "excerpt: Global functions\n"+
                 "icon:\n" +
                 "  type: fa\n" +
-                "  name: fa-paper-plane\n" +
+                "  name: fa-cubes\n" +
                 "color: green\n" +
                 "---\n"
                 ;
@@ -415,7 +415,7 @@ function removeModuleLinks(str: string) {
                 "excerpt: Compile-time macros\n"+
                 "icon:\n" +
                 "  type: fa\n" +
-                "  name: fa-paper-plane\n" +
+                "  name: fa-cubes\n" +
                 "color: green\n" +
                 "---\n\n"
                 ;
@@ -505,7 +505,7 @@ title: ${title}
 excerpt: ${excerpt}
 icon:
   type: fa
-  name: fa-paper-plane
+  name: fa-cubes
 color: green
 ---
 

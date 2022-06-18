@@ -6,7 +6,7 @@ tagline: |
 heading: TSWoW Wiki
 icon:
   type: fa
-  name: fa-paper-plane
+  name: fa-cubes
 color: green
 navigation:
   - /api/livescripts/classes/index

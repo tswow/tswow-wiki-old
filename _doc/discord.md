@@ -2,7 +2,8 @@
 title: Discord
 excerpt: Talk to developers and other tswow users
 icon:
-  type: fa
-  name: fa-paper-plane
+  type: fa-brands
+  name: fa-discord
+  cursive: false
 color: green
 ---

@@ -2,7 +2,7 @@
 title: Demo
 excerpt: WIP
 icon:
-  type: fa
-  name: fa-paper-plane
+  type: fa-solid
+  name: fa-mountain-sun
 color: green
 ---

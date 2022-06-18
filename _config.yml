@@ -9,8 +9,8 @@ description: &site_description The WoTLK Modding Framework
 branding:
   icon:
     name: icon_documents_alt
-  highlight: Pretty
-  bold: Docs
+  highlight: TSWoW
+  bold: Wiki
 markdown: kramdown
 kramdown:
   auto_ids: true

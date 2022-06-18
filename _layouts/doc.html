@@ -20,7 +20,6 @@ layout: compress
     <!-- Global CSS -->
     <link rel="stylesheet" type="text/css" href="{{ '/assets/plugins/bootstrap/css/bootstrap.min.css'      | prepend: site.baseurl }}">
     <!-- Plugins CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ '/assets/plugins/font-awesome/css/font-awesome.css'    | prepend: site.baseurl }}">
     <link rel="stylesheet" type="text/css" href="{{ '/assets/plugins/lightbox/dist/ekko-lightbox.min.css'  | prepend: site.baseurl }}">
     <link rel="stylesheet" type="text/css" href="{{ '/assets/plugins/elegant_font/css/style.css'           | prepend: site.baseurl }}">
 
@@ -34,9 +33,6 @@ layout: compress
     <![endif]-->
 
     {% include open_graph.html %}
-    {% include twitter_cards.html %}
-
-    {% include google_analytics.html %}
 
     {% include custom_head.html %}
 
@@ -106,9 +102,6 @@ layout: compress
 
             </div>
         </div>
-
-        {% include promo.html promo=page.promo %}
-
     </div>
 
     {% include footer.html %}
@@ -116,7 +109,6 @@ layout: compress
     <!-- Main Javascript -->
     <script type="text/javascript" src="{{ '/assets/plugins/jquery-1.12.3.min.js'                          | prepend: site.baseurl }}"></script>
     <script type="text/javascript" src="{{ '/assets/plugins/bootstrap/js/bootstrap.min.js'                 | prepend: site.baseurl }}"></script>
-    <script type="text/javascript" src="{{ '/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js'        | prepend: site.baseurl }}"></script>
     <script type="text/javascript" src="{{ '/assets/plugins/lightbox/dist/ekko-lightbox.min.js'            | prepend: site.baseurl }}"></script>
     <script type="text/javascript" src="{{ '/assets/plugins/jquery-match-height/jquery.matchHeight-min.js' | prepend: site.baseurl }}"></script>
     <script type="text/javascript" src="{{ '/assets/js/main.js'                                            | prepend: site.baseurl }}"></script>
