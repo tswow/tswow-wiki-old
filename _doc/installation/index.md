@@ -10,7 +10,7 @@ icon:
   name: fa-paper-plane
 color: green
 navigation:
-  - /installation/windows-repack
+  - /installation/repack
   - /installation/compiling
   - /installation/compiling-linux
 ---

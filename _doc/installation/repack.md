@@ -1,5 +1,10 @@
 ---
 title: Windows Installation
+excerpt: Installing TSWoW from a repack
+icon:
+  type: fa
+  name: fa-paper-plane
+color: green
 ---
 
 This guide will explain how to set up a fully working TSWoW development environment with a working server that you can connect to from your local computer.
