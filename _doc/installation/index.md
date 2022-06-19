@@ -11,6 +11,6 @@ icon:
 color: green
 navigation:
   - /installation/windows-repack
-  - /installation/windows-source
-  - /installation/linux-source
+  - /installation/compiling
+  - /installation/compiling-linux
 ---
