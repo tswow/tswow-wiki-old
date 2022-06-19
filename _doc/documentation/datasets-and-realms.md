@@ -1,5 +1,10 @@
 ---
 title: Datasets and Realms
+icon:
+  type: fa
+  name: fa-book
+excerpt: Advanced configurations for running multiple realms and patches
+color: green
 ---
 
 TSWoW supports managing multiple realms from a single installation, and additionally managing separate sets of module data that should be applied for each realm.

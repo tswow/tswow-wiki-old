@@ -11,4 +11,13 @@ icon:
 color: green
 navigation:
   - /documentation/page
+  - /documentation/addons
+  - /documentation/client-compatibility
+  - /documentation/datascripts
+  - /documentation/datasets-and-realms
+  - /documentation/ids
+  - /documentation/livescripts
+  - /documentation/lua
+  - /documentation/modules
+  - /documentation/transports
 ---

@@ -1,5 +1,10 @@
 ---
 title: Datascripts
+icon:
+  type: fa
+  name: fa-book
+excerpt: Documentation for the datascripting conventions in TSWoW
+color: green
 ---
 
 Datascripts are the TSWoW way to generate static game data for the server (SQL, DBC) and the client (DBC,lua,xml). Datascripts contain powerful tools to create anything from spells, creatures and transports to entire classes, maps, dungeons and much more.

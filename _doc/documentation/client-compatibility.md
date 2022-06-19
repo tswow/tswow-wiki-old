@@ -1,5 +1,10 @@
 ---
 title: Client Compatibility
+icon:
+  type: fa
+  name: fa-book
+excerpt: Common issues and compatibility information about the 3.3.5a client
+color: green
 ---
 
 The purpose of this page is to document compatibility issues with the World of Warcraft 3.3.5a client (build 12340). This can include both modded and non-modded versions of the game.

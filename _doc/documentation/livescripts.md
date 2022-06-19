@@ -1,5 +1,10 @@
 ---
 title: Live Scripts
+icon:
+  type: fa
+  name: fa-book
+excerpt: Scripting the server with TypeScript and C++
+color: green
 ---
 
 _Note: As TSWoW develops, some caveats listed on this page might disappear._

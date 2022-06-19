@@ -1,5 +1,10 @@
 ---
 title: Id Generation
+icon:
+  type: fa
+  name: fa-book
+excerpt: TSWoW IDs and how they work
+color: green
 ---
 
 In World of Warcraft, most static and dynamic entities have domain-local numeric IDs, meaning ID numbers can collide between tables but must be unique within them.

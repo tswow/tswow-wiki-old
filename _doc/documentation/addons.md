@@ -1,5 +1,10 @@
 ---
 title: Addons
+icon:
+  type: fa
+  name: fa-book
+excerpt: Learn about writing clientside interfaces using Lua or TypeScript
+color: green
 ---
 
 TSWoW supports creating addons using the TypeScript programming language, and to write special message classes that allow high-level communication between addons and Live scripts.

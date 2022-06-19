@@ -1,5 +1,10 @@
 ---
 title: Lua (Serverside)
+icon:
+  type: fa
+  name: fa-book
+excerpt: Easier server scripting with TypeScript and Lua
+color: green
 ---
 
 _Serverside Lua is an upcoming feature for the 0.15 release of tswow_
