@@ -1,0 +1,14 @@
+<input placeholder="Search" class="searchbar" style="
+    margin-top: 30px;
+    padding: 5px;
+    width: 400px;
+    color: black;
+    font-size: 18px;
+" />
+<script>
+    let search_results = {}
+</script>
+
+{% include searchbar_results.html %}
+
+<script type="text/javascript" src="{{ '/assets/js/searchbar.js' | prepend: site.baseurl }}"></script>

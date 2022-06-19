@@ -1,0 +1,78 @@
+#
+# Site settings
+#
+remote_theme: LeakyAbstractions/pretty-docs
+url: https://leakyabstractions.github.io
+baseurl: /test
+title: &site_title TSWoW Wiki
+description: &site_description The WoTLK Modding Framework
+branding:
+  icon:
+    name: icon_documents_alt
+  highlight: TSWoW
+  bold: Wiki
+markdown: kramdown
+kramdown:
+  auto_ids: true
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  input: GFM
+  hard_wrap: false
+  footnote_nr: 1
+  parse_block_html: true
+
+
+#
+# Owner
+#
+owner:
+  name: TSWoW
+  copyright:
+    notice: TSWoW
+    author: "[TSWoW](https://github.com/tswow/tswow/)"
+
+
+#
+# Social
+#
+open_graph:
+  title: *site_title
+  site_name: *site_title
+  description: *site_description
+  locale: en_US
+  image: /assets/images/thumb.png
+share:
+  github:
+    repo: tswow/tswow-wiki
+    position: right
+    color: red
+
+
+#
+# Collections
+#
+collections:
+  doc:
+    output: true
+    permalink: /:path.html
+
+
+#
+# Default values
+#
+defaults:
+  -
+    scope:
+      path: ""
+      type: doc
+    values:
+      layout: doc
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: doc
+
+exclude: ['_site','api_generator']

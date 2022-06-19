@@ -1,0 +1,7 @@
+{% if include.icon %}
+    {% if include.icon.cursive %}
+        <i class="icon {{include.icon.type}} {{ include.icon.name }}"></i>
+    {% else %}
+        <p class="icon {{include.icon.type}} {{ include.icon.name }}"></p>
+    {% endif %}
+{% endif %}

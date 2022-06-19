@@ -1,0 +1,19 @@
+name: CI
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - main
+jobs:
+  build-api:
+    runs-on: ubuntu-20.04
+    steps:
+      # Build
+      - uses: actions/checkout@v2
+      - name: Build API
+        run: node build_api
+      - name: Commit build files
+        run: rm _doc/api/.gitignore && rm _includes/.gitignore && git add . && git config user.name test && git config user.email test && git commit -m "Bump"
+      - name: Push to gh_pages
+        run: git push origin HEAD:gh_pages -f
