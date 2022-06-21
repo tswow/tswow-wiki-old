@@ -8,6 +8,9 @@ function dirname(path) {
     return path.split('/').slice(0,-1).join('/')
 }
 
+const IS_API_PAGE = page_url.includes('/api/')
+const IS_TUTORIAL_PAGE = page_url.includes('/tutorials/')
+
 $(document).ready(function() {
     $('.doc-title').attr('id','doc-title')
     let dir = dirname(page_url);
@@ -16,22 +19,27 @@ $(document).ready(function() {
         .sort()
         .forEach(x=>{
             const is_cur_page = x.url == page_url
-            if(!is_cur_page) return;
-            /*
-            $('#doc-menu').append(`
-            <li class="doc-sidebar-list">
-                <a href="/pretty-docs${x.url}" ${is_cur_page ? 'style="font-weight: bold;"' : ''}> ${x.title} </a>
-                <ul ${is_cur_page ? 'id="submenu"':''} class="nav doc-sub-menu"></ul>
-            </li>
-            `)
-            */
+            if(IS_API_PAGE) {
+                return;
+            }
+
+            if(IS_TUTORIAL_PAGE || is_cur_page) {
+                $('#doc-menu').append(`
+                <li class="doc-sidebar-list">
+                    <a href="/test${x.url}" ${is_cur_page ? 'style="font-weight: bold;"' : ''}> ${x.title} </a>
+                    <ul ${is_cur_page ? 'id="submenu"':''} class="nav doc-sub-menu"></ul>
+                </li>
+                `)
+            }
         })
 
     function header_base(node) {
         node.css('font-weight','bold')
             .css('margin-bottom','20px')
             .css('padding-bottom','2px')
-        //$('#submenu').append(`<li><a href=#${node.attr('id')}>${node.text()}</a></li>`)
+        if(!IS_API_PAGE) {
+            $('#submenu').append(`<li><a href=#${node.attr('id')}>${node.text()}</a></li>`)
+        }
     }
 
     $(".code-example")
@@ -44,9 +52,14 @@ $(document).ready(function() {
             node = $(node)
             if(node.is("div")) node.removeClass('language-plaintext')
         })
-    $("table,pre")
-        .css('width','85%')
+
+    // todo: move to sass
+    if(page_url.includes('api')) {
+        $("table,pre")
+            .css('width','85%')
+    }
     
+    // todo: move to sass
     $("h1,h2")
         .each((_,node) => {
             node = $(node)
@@ -67,7 +80,13 @@ $(document).ready(function() {
             header_base(node)
         })
 
+    if(!IS_API_PAGE) {
+        $(".language-plaintext").css('background-color','#646464')
+    }
+
     function updateSidebar() {
+        // note: this glitched out scrolling on short pages, needs rewrite to work
+        /*
         let list = $('.doc-sidebar-list')
 
         // sorry 4k people i will get to you eventually
@@ -84,10 +103,9 @@ $(document).ready(function() {
         list.css('left',`${BASE_X_OFFSET+diff}px`);
         list.css('width',`${BASE_SIDEBAR_WIDTH-diff}px`);
         list.css('height',`${window.innerHeight-20-scroll_offset}px`)
+        */
     }
-    
     document.addEventListener('scroll',updateSidebar);
     window.addEventListener('resize',updateSidebar);
     updateSidebar();
-
 })
