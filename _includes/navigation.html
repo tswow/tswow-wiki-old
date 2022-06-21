@@ -15,11 +15,15 @@
                             </div>
                             <h3 class="title">{% if post.short_title %}{{ post.short_title }}{% else %}{{ post.title }}{% endif %}</h3>
                             <p class="intro">{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}</p>
-                            {% assign url = post.url | split: '/index.html' %}
-                            {% assign url = url[0] %}
-                            {% assign url = url | split: '.html' %}
-                            {% assign url = url[0] %}
-                            <a class="link" href="{{ url | prepend: site.baseurl }}"><span></span></a>
+                            {% if post.url_override %}
+                              <a class="link" href="{{ post.url_override }}"><span></span></a>
+                            {% else %}
+                              {% assign url = post.url | split: '/index.html' %}
+                              {% assign url = url[0] %}
+                              {% assign url = url | split: '.html' %}
+                              {% assign url = url[0] %}
+                              <a class="link" href="{{ url | prepend: site.baseurl }}"><span></span></a>
+                            {% endif %}
                         </div>
                     </div>
                   {% endfor %}
