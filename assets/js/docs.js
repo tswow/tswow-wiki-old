@@ -81,7 +81,7 @@ $(document).ready(function() {
         })
 
     if(!IS_API_PAGE) {
-        $(".language-plaintext").css('background-color','#646464')
+        $(".language-plaintext").css('background-color','#272822')
     }
 
     function updateSidebar() {
