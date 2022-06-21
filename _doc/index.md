@@ -7,7 +7,7 @@ heading: TSWoW Wiki
 navigation:
   - /installation/index
   - /tutorials/index
-  - /demo
+  - /projects/index
   - /documentation/index
   - /api/index
   - /discord
