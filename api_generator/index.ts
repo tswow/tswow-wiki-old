@@ -76,8 +76,7 @@ function removeModuleLinks(str: string) {
     // Clone
     if(!fs.existsSync('./tswow')) {
         child_process.execSync(
-            // TODO: REMOVE DEV BRANCH!!!
-            'git clone https://github.com/tswow/tswow.git --depth=1 --branch=dev --recurse-submodules',
+            'git clone https://github.com/tswow/tswow.git --depth=1 --branch=master --recurse-submodules',
             {stdio:'inherit'}
         )
     }
