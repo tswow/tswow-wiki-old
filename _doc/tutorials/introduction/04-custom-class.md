@@ -26,7 +26,7 @@ export const NECROMANCER_CLASS = std.Classes
 This creates a new class with the name "Necromancer" based off the Mage class. Run the `build data` command and enter the character creation screen. You should see your new class added.
 
 {:refdef: style="text-align: center;"}
-![](../necromancer-charcreate.png)
+![](necromancer-charcreate.png)
 {:refdef}
 
 ### A note about WoW crashing when creating/deleting classes
@@ -52,13 +52,13 @@ NECROMANCER_CLASS.UI.Description.set("Necromancers raise and control the undead.
 ```
 
 {:refdef: style="text-align: center;"}
-![](../necromancer-description.png)
+![](necromancer-description.png)
 <br/><br/>
 _Class descriptions added_
 {:refdef}
 
 {:refdef: style="text-align: center;"}
-![](../necromancer-classcolor.png)
+![](necromancer-classcolor.png)
 <br/><br/>
 _Class color modified_
 {:refdef}

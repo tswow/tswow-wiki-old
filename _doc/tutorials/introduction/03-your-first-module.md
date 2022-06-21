@@ -54,11 +54,11 @@ Built SQL/DBC/MPQ data in 2.27s
 You should also notice that TSWoW restarted the client for you in the background. If we enter the character creation screen, we can see that we have indeed changed the name of Warrior to Adventurer.
 
 {:refdef: style="text-align: center;"}
-![](../adventurer-charcreation.png)
+![](adventurer-charcreation.png)
 {:refdef}
 
 {:refdef: style="text-align: center;"}
-![](../adventurer-wholist.png)
+![](adventurer-wholist.png)
 {:refdef}
 
 ## Server build

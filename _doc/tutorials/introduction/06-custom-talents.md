@@ -20,7 +20,7 @@ export const NECROMANCY_TREE = NECROMANCER_CLASS.TalentTrees
 If we rebuild our scripts with the `build data` command and level up a necromancer to level 10 (`.levelup 9`), we can see that we have an empty talent tree called "Necromancy".
 
 {:refdef: style="text-align: center;"}
-![](../necromancy-talents.png)
+![](necromancy-talents.png)
 {:refdef}
 
 ## Talents
@@ -44,13 +44,13 @@ const SILLY_TALENT = NECROMANCY_TREE.Talents
 Rebuild the code using `build data`, level up a necromancer to 15 and look at your talent tree. You should see fire bolt as the talent icon.
 
 {:refdef: style="text-align: center;"}
-![](../fireball-talent.png)
+![](fireball-talent.png)
 {:refdef}
 
 If we click it once, it will state that we have now learnt Fireball and that the icon stays the same. If we click it again to learn the second rank something happens, however.
 
 {:refdef: style="text-align: center;"}
-![](../shadowbolt-talent.png)
+![](shadowbolt-talent.png)
 {:refdef}
 
 The icon has changed to shadow bolt, and if we open our spell book we can see that we have unlearnt fireball and instead learnt shadow bolt. If we click it again it will likewise change to auto attack, and we have unlearnt shadow bolt.
@@ -58,7 +58,7 @@ The icon has changed to shadow bolt, and if we open our spell book we can see th
 Clicking the talent one last time changes the icon to Sinister strike, and if we open our spell book we can see that we have **unlearnt auto-attack**, despite that we already knew it from before.
 
 {:refdef: style="text-align: center;"}
-![](../no-autoattack.png)
+![](no-autoattack.png)
 {:refdef}
 
 ## Creating a real custom Talent
@@ -70,7 +70,7 @@ We have shown that talents are just normal spells and we could really stick just
 Our strategy will be the same as when we made other custom spells: find a spell that resembles what we're trying to create. Mages has a talent that reduces the cast-time of their Fireball, so perhaps we can somehow repurpose that to affect Summon Abomination instead?
 
 {:refdef: style="text-align: center;"}
-![](../imp-fireball.png)
+![](imp-fireball.png)
 {:refdef}
 
 However, we must also figure out how to actually change the spell to affect our summoning spell instead of fireball. We know that this spell affects multiple other spells since there are multiple fireballs, but that it doesn't just affect every single spell in the game. To keep this section focused on talents, we will simply say that the spell effect that does the casttime reduction happens to use what is called a ClassMask. This classmask must match with the classmask of the spell we are trying to modify, and TSWoW has a fairly simple way of achieving this.

@@ -37,7 +37,7 @@ const ZOMBIE_SPAWNS = ZOMBIE.Spawns.addGet('mymod','zombie-spawns',[
 Storing the positions in an array makes it easier to copypaste directly from the positions.txt file, and leads to slightly less code to write. To get these positions, I just ran around the area behind Northshire abbey and used the `.at` ingame command at random locations. If we log in, we should now see a bunch of zombies standing around.
 
 {:refdef: style="text-align: center;"}
-![](../zombies.png)
+![](zombies.png)
 {:refdef}
 
 ## Random Movement
@@ -85,7 +85,7 @@ ZOMBIE.Stats.ManaMod.set(0.25)
 If we enter the world, we should see that zombies now have mana and don't do very much melee damage at all.
 
 {:refdef: style="text-align: center;"}
-![](../zombie-mage.png)
+![](zombie-mage.png)
 {:refdef}
 
 ## Making our mob Aggressive
@@ -97,7 +97,7 @@ We will use the same old strategy we always use: we find a unit that already is 
 I just went outside of Northshire, took the first hostile mob I could find and used the ingame `.id` command to print its ID:
 
 {:refdef: style="text-align: center;"}
-![](../hostile-mob.png)
+![](hostile-mob.png)
 {:refdef}
 
 Now, we can load this creature into TSWoW and copy its faction to our zombie:
@@ -113,7 +113,7 @@ ZOMBIE.FactionTemplate.set(DEFIAS_CUTPURSE.FactionTemplate.get())
 Rebuild, and should now see that the zombies are indeed hostile to players. (_If you have GM mode on, you need to turn it off with `.gm off` to for creatures to be hostile at all_)
 
 {:refdef: style="text-align: center;"}
-![](../hostile.png)
+![](hostile.png)
 {:refdef}
 
 ## Summary

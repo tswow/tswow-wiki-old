@@ -19,7 +19,7 @@ A gossip menu has a few different parts, and we will briefly explain those here.
 **Option Action**: An option action is what a gossip option does to the menu, such as opening a completely new gossip page, open a trainer window, vendor window, bank and so on. Some actions have separate menus associated with them, while others do not.
 
 {:refdef: style="text-align: center;"}
-![](../gossip-parts.png)
+![](gossip-parts.png)
 {:refdef}
 
 ## Creating your first Gossip
@@ -61,7 +61,7 @@ MAIN_GOSSIP.Text.add({enGB:'Hi world from Gossip window'});
 This is all we need to create a basic gossip window. Rebuild and check your creature again, this time you should be able to interact and you should see any the above texts in your gossip window. If you click the NPC enough times you should see both messages appear randomly.
 
 {:refdef: style="text-align: center;"}
-![](../gossip-simple.png)
+![](gossip-simple.png)
 {:refdef}
 
 ### Gossip Options
@@ -77,7 +77,7 @@ BANK_OPTION.Text.setSimple({enGB:'Please open my bank for me'});
 ```
 
 {:refdef: style="text-align: center;"}
-![](../gossip-bank.png)
+![](gossip-bank.png)
 {:refdef}
 
 When you rebuild and talk to the NPC, you will notice that the bank opens automatically. This is because, in WotLK, gossips will automatically open many common options automatically if it's the only option available.
@@ -95,7 +95,7 @@ INNKEEPER_OPTION.Text.setSimple({enGB:'Can I stay here?'});
 You should now see that you get both the gossip options you created when you click on the NPC. You should also be able to verify that both options work as intended, and you can both access your bank and set this location as an inn (_note: You cannot set your inn location if GM mode is activated_).
 
 {:refdef: style="text-align: center;"}
-![](../gossip-innkeeper.png)
+![](gossip-innkeeper.png)
 {:refdef}
 
 ## Creating Sub-menus
@@ -115,11 +115,11 @@ SUBMENU_OPTION.Action.GOSSIP.setNew(submenu=>{
 ```
 
 {:refdef: style="text-align: center;"}
-![](../gossip-submenu-option.png)
+![](gossip-submenu-option.png)
 {:refdef}
 
 {:refdef: style="text-align: center;"}
-![](../gossip-submenu.png)
+![](gossip-submenu.png)
 {:refdef}
 
 Now, when you click the third option in your main gossip window, you should see that it leads you to the sub-menu. Let's add a link back to the main window. complete the submenu callback as follows:
@@ -137,7 +137,7 @@ SUBMENU_OPTION.Action.GOSSIP.setNew(submenu=>{
 You should now see that your sub-menu links back to the main menu, and you can toggle between them indefinitely.
 
 {:refdef: style="text-align: center;"}
-![](../gossip-link.png)
+![](gossip-link.png)
 {:refdef}
 
 ## Creating Vendors
@@ -160,11 +160,11 @@ VENDOR_OPTION.Action.VENDOR.setNew(vendor=>{
 You should now be able to open your vendor and purchase a Bent staff for 95 copper.
 
 {:refdef: style="text-align: center;"}
-![](../vendor-option.png)
+![](vendor-option.png)
 {:refdef}
 
 {:refdef: style="text-align: center;"}
-![](../vendor-screen.png)
+![](vendor-screen.png)
 {:refdef}
 
 Price informations is stored in items themselves, and we will learn more about creating items in a future tutorial. However, if you want to, you can add the following code to manipulate the price of that particular item:

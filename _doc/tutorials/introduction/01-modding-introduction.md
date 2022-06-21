@@ -1,5 +1,10 @@
 ---
 title: Modding Introduction
+icon:
+  type: fa-solid
+  name: fa-person-skiing
+excerpt: Getting started with TSWoW
+color: green
 ---
 
 _Note: This tutorial series was recently rewritten to work with tswow version 0.13. Some code is not very well explained here, and the later sections have not yet been rewritten as we're looking at replacing this with a better tutorial altogether. Please reach out if there is anything you would like to know, we can usually provide basic code examples for most types of mods in the game._
@@ -9,7 +14,7 @@ In this section, we will briefly explain how modding with TSWoW looks and feels 
 With TSWoW, we use the TypeScript programming language in the VSCodium/VSCode editor to modify the games data and behavior. Below is how modding typically looks, we have a code window and a terminal open to compile our code, and to restart and communicate with the server and client.
 
 {:refdef: style="text-align: center;"}
-![](../tswow-layout.png)
+![](tswow-layout.png)
 <br/><br/>
 _A typical TSWoW development environment_
 {: refdef}
@@ -18,17 +23,17 @@ _A typical TSWoW development environment_
 TSWoW mods are divided into _modules_. A module is a folder containing scripts and game assets that modifies the game in some way. All modules are placed in the `modules` subdirectory in your TSWoW installation.
 
 {:refdef: style="text-align: center;"}
-![](../modules.png)
+![](modules.png)
 _Two modules installed_
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![](../module-contents.png)
+![](module-contents.png)
 _Contents of a typical TSWoW module_
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![](../module-vscodium.png)
+![](module-vscodium.png)
 <br/><br/>
 _Module as viewed from VSCodium_
 {: refdef}
@@ -55,7 +60,7 @@ export const NECROMANCER = std.Classes
 ```
 
 {:refdef: style="text-align: center;"}
-![](../custom-class.png)
+![](custom-class.png)
 <br/><br/>
 _Code example of a fully working custom class made with a Data Script_
 {: refdef}
@@ -77,7 +82,7 @@ export function Main(events: TSEvents) {
 }
 ```
 {:refdef: style="text-align: center;"}
-![](../live-script.png)
+![](live-script.png)
 <br/><br/>
 _Code example of a Live Script_
 {:refdef}
@@ -89,8 +94,8 @@ Assets are simply resource files such as 3D models, textures and audio. These fi
 _Note to veterans: To modify DBC, LUA or XML files you use data scripts, not assets._
 
 {:refdef: style="text-align: center;"}
-![](../boar-file.png)
-![](../boar-ingame.png)
+![](boar-file.png)
+![](boar-ingame.png)
 _Silly boar recoloring using an asset replacement_
 {:refdef}
 

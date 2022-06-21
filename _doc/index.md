@@ -6,7 +6,7 @@ tagline: |
 heading: TSWoW Wiki
 navigation:
   - /installation/index
-  - /introduction/index
+  - /tutorials/index
   - /demo
   - /documentation/index
   - /api/index
