@@ -214,3 +214,15 @@ TSMutables are declared in global.d.ts just as they are presented, as a `TSMutab
 MyMutableEvent(callback: (player: TSPlayer, value: TSMutable<float>) => void)
 MyMutableStringEvent(callback: (player: TSPlayer, value: TSMutableString) => void)
 ```
+
+## Contributing Changes to TSWoW
+
+We are generally very welcoming of proposed additions to our livescripting API, but contributions should follow some guidelines for us to accept them into our official repository:
+ 
+- It is a good idea to discuss new additions with us before working on them, to make sure it's something we feel is useful for our users in general. This is especially true for larger additions such as completely new event categories or TS* classes.
+- Both events and functions should (with very few exceptions) always be available to both LiveScripts and Lua scripts, so adding a working Lua declaration is necessary.
+- Any Lua override functions should follow the conventions we use (be private in the class/having `TSLua` as a friend, have the `L` prefix and count from 0 and up for overloaded methods)
+- Events to id-bound categories should (with very few exceptions) always be id-bound as well.
+- Events and methods should have _some_ general usability, as in that someone else could realistically make use of the added functionality. 
+- Events and methods should (with very few exceptions) not accept more parameters than necessary. If some event parameter can already be deduced or accessed from other parameters, it should not be added separately.
+- For class hierarchies, methods should (with very few exceptions) be added to the lowest common class possible (`Unit` methods should be added to `TSUnit`, not `TSPlayer`)
