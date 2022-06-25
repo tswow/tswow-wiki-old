@@ -20,4 +20,5 @@ navigation:
   - /documentation/lua
   - /documentation/modules
   - /documentation/transports
+  - /documentation/tracy
 ---
