@@ -1,5 +1,6 @@
 ---
 title: Extending the LiveScript API
+icon:
   type: fa
   name: fa-book
 excerpt: Learn how to extend the core with your own custom LiveScript events and functions
