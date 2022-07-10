@@ -19,4 +19,6 @@ navigation:
   - /documentation/livescripts
   - /documentation/modules
   - /documentation/transports
+  - /documentation/tracy
+  - /documentation/extending-livescripts
 ---
