@@ -17,7 +17,6 @@ navigation:
   - /documentation/datasets-and-realms
   - /documentation/ids
   - /documentation/livescripts
-  - /documentation/lua
   - /documentation/modules
   - /documentation/transports
 ---
