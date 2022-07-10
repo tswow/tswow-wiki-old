@@ -79,9 +79,14 @@ $(document).ready(function() {
             }
             header_base(node)
         })
+    $('h4').css('font-weight','700')
+
+    $('h1,h2,h3,h4').css('margin-top','60px')
 
     if(!IS_API_PAGE) {
-        $(".language-plaintext").css('background-color','#272822')
+        $(".language-plaintext")
+            .css('background-color','rgb(243 243 243)')
+            .css('color','#505050')
     }
 
     function updateSidebar() {
