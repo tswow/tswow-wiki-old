@@ -21,4 +21,5 @@ navigation:
   - /documentation/transports
   - /documentation/tracy
   - /documentation/extending-livescripts
+  - /documentation/migrating
 ---
