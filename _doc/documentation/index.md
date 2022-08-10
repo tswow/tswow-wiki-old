@@ -22,4 +22,5 @@ navigation:
   - /documentation/tracy
   - /documentation/extending-livescripts
   - /documentation/migrating
+  - /documentation/bots
 ---
