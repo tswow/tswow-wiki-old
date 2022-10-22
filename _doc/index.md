@@ -13,8 +13,6 @@ navigation:
   - /discord
 ---
 
-# **Note: This is a preview of the new official TSWoW wiki, and is not yet complete.**
-
 This is the official wiki for TSWoW, the modding framework for World of Warcraft: Wrath of the Lich King.
 
 The aim of this wiki is to contain a beginner-friendly introduction, documentation and practical examples for how to use this tool.
