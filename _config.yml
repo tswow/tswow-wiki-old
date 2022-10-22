@@ -2,7 +2,7 @@
 # Site settings
 #
 remote_theme: LeakyAbstractions/pretty-docs
-url: https://tswow.github.io/tswow-wiki/
+url: https://tswow.github.io
 baseurl: /tswow-wiki
 title: &site_title TSWoW Wiki
 description: &site_description The WoTLK Modding Framework
