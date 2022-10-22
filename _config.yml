@@ -3,7 +3,7 @@
 #
 remote_theme: LeakyAbstractions/pretty-docs
 url: https://leakyabstractions.github.io
-baseurl: /test
+baseurl: /tswow-wiki
 title: &site_title TSWoW Wiki
 description: &site_description The WoTLK Modding Framework
 branding:
