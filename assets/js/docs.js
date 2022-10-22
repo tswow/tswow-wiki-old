@@ -26,7 +26,7 @@ $(document).ready(function() {
             if(IS_TUTORIAL_PAGE || is_cur_page) {
                 $('#doc-menu').append(`
                 <li class="doc-sidebar-list">
-                    <a href="/test${x.url.replace('.html','')}" ${is_cur_page ? 'style="font-weight: bold;"' : ''}> ${x.title} </a>
+                    <a href="/tswow-wiki${x.url.replace('.html','')}" ${is_cur_page ? 'style="font-weight: bold;"' : ''}> ${x.title} </a>
                     <ul ${is_cur_page ? 'id="submenu"':''} class="nav doc-sub-menu"></ul>
                 </li>
                 `)
