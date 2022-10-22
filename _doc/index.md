@@ -11,6 +11,8 @@ navigation:
   - /documentation/index
   - /api/index
   - /discord
+redirect_from:
+  - /home
 ---
 
 This is the official wiki for TSWoW, the modding framework for World of Warcraft: Wrath of the Lich King.

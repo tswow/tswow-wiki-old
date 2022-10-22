@@ -6,6 +6,8 @@ url: https://leakyabstractions.github.io
 baseurl: /tswow-wiki
 title: &site_title TSWoW Wiki
 description: &site_description The WoTLK Modding Framework
+plugins:
+  - jekyll-redirect-from
 branding:
   icon:
     name: icon_documents_alt
