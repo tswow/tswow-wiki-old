@@ -19,7 +19,7 @@ The purpose of this document is to:
 
 - [Git](https://github.com/git-for-windows/git/releases/download/v2.30.0.windows.2/Git-2.30.0.2-64-bit.exe)
 
-- [Visual Studio 2019+](https://visualstudio.microsoft.com/downloads/)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
 
 - [All the normal tswow dependencies](https://tswow.github.io/tswow-wiki/introduction/02-installation/#prerequisites)
 
