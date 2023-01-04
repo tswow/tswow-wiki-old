@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@types/node": "17.0.42",
+    "@types/node": "^17.0.42",
     "typedoc": "0.22.17",
     "typedoc-plugin-markdown": "3.12.1"
   }
