@@ -1,5 +1,5 @@
 const child_process = require('child_process')
 process.chdir('api_generator')
 child_process.execSync('npm i',{stdio:'inherit'})
-child_process.execSync('tsc index.ts',{stdio: 'inherit'})
+child_process.execSync('tsc',{stdio: 'inherit'})
 child_process.execSync('node index', {stdio:'inherit'})
