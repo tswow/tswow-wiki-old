@@ -9,8 +9,6 @@ color: green
 
 [Windows Guide](../compiling/)
 
-**Please note: Linux development is currently disabled on the 0.13 branch of tswow.**
-
 The purpose of this document is to:
 
 1. Walk users through how to build TSWoW from source
