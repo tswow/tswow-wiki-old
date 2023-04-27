@@ -19,6 +19,8 @@ The purpose of this document is to:
 
 - [Git](https://github.com/git-for-windows/git/releases/download/v2.30.0.windows.2/Git-2.30.0.2-64-bit.exe)
 
+- [Node.js (version 18.12.1 or higher)](https://nodejs.org/dist/v18.12.1/node-v18.12.1-x64.msi)
+
 - [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
 
 - [All the normal tswow dependencies](https://tswow.github.io/tswow-wiki/introduction/02-installation/#prerequisites)
