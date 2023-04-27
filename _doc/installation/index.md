@@ -11,6 +11,7 @@ icon:
 color: green
 navigation:
   - /installation/repack
+  - /installation/repack_short
   - /installation/compiling
   - /installation/compiling-linux
 ---
