@@ -21,21 +21,11 @@ You will need to install the following programs:
 
     - Please make sure there are **no spaces** anywhere in the pathname to your WoW client **or the TSWoW installation**.
 
-- [Git](https://github.com/git-for-windows/git/releases/download/v2.30.0.windows.1/Git-2.30.0-64-bit.exe)
-
-- [7-zip](https://www.7-zip.org/a/7z1900-x64.exe) (do **not** use winrar to open 7zip files, we've had reports that this breaks/ignores some files)
-
-- [Node.js (version 18.12.1 or higher)](https://nodejs.org/dist/v18.12.1/node-v18.12.1-x64.msi)
-
-- [Python 2.7](https://www.python.org/ftp/python/2.7.2/python-2.7.2.amd64.msi) (or any of 3.5, 3.6, 3.7, 3.8)
-
 - **All** the following versions of VCRedist:
-
     - [Latest x86](https://aka.ms/vs/16/release/vc_redist.x86.exe)
-
     - [Latest x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
-
-    - [2013 x86+x64](https://www.microsoft.com/en-us/download/details.aspx?id=40784) (Select "English", then both x86 and x64)
+    - [2013 x86](https://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x86.exe)
+    - [2013 x64](https://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x64.exe)
 
 - [VSCodium version 1.60](https://github.com/VSCodium/vscodium/releases/download/1.55.2/VSCodiumSetup-x64-1.55.2.exe)
 
