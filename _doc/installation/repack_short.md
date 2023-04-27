@@ -7,8 +7,6 @@ icon:
 color: green
 ---
 
-[Full Installation Guide](../repack/)
-
 - Install all the following programs
     - [Latest x86](https://aka.ms/vs/16/release/vc_redist.x86.exe)
     - [Latest x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
