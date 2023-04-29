@@ -7,7 +7,7 @@ icon:
   name: fa-mountain-sun
 color: green
 navigation:
-  - /projects/tswow-tests
+  - /projects/tswow-plotting
   - /projects/baja
 ---
 
