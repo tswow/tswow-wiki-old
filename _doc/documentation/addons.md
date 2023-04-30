@@ -28,8 +28,6 @@ When an addon is generated, the following necessary files are automatically crea
 
 - `global.d.ts`: Contains type definitions for all Blizzard functions and types accessible from lua.
 
-- `lib/Events.ts`: Contains TSWoWs custom addon event and communications systems.
-
 - `addon.ts`: Is always the first real entrypoint of your addon. It is the only transpiled file that is automatically executed.
 
 ## TypeScript
