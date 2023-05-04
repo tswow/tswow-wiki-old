@@ -67,6 +67,42 @@ The source, build and install directories should all be **separate**. Do not pla
 
 ## Known Issues
 
+### Incorrect / Broken crashlogs
+
+This is an issue we've identified to happen when having both visual studio 2022 and visual studio 2019 installed alongside each others, despite all build scripts specifically selecting vs2022.
+
+The only fix we've been able to identify is uninstalling visual studio 2019.
+
+### CMake or node not finding Visual Studio after upgrading to 2022
+
+Causes symptoms like this:
+
+```
+npm ERR! gyp ERR! find VS msvs_version not set from command line or npm config
+npm ERR! gyp ERR! find VS VCINSTALLDIR not set, not running in VS Command Prompt
+npm ERR! gyp ERR! find VS unknown version "undefined" found at "C:\Program Files\Microsoft Visual Studio\2022\Community"
+npm ERR! gyp ERR! find VS could not find a version of Visual Studio 2017 or newer to use
+npm ERR! gyp ERR! find VS looking for Visual Studio 2015
+npm ERR! gyp ERR! find VS - not found
+npm ERR! gyp ERR! find VS not looking for VS2013 as it is only supported up to Node.js 8
+```
+
+or this:
+
+```
+CMake Error:
+  Generator
+    
+    Visual Studio 17 2022
+  could not find any instance of Visual studio.
+```
+
+The only way we've been able to fix these issues have been to:
+
+- Reinstall your system node.js entirely (for the gyp error)
+- Reinstall visual studio 2022 **after** uninstalling visual studio 2019
+- Remove `tswow-build/TrinityCore` and restart build script
+
 ### Release build install directory
 `build release` doesn't work with a normal `install` directory. To build a release, you must run turn off the build script, change the install directory to an empty/non-existing directory in `source/build.conf` and start the build script again.
     - <span>This new directory can **not** be open in VSCodium/VSCode.</span>
