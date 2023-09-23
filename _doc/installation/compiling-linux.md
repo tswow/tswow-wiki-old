@@ -7,6 +7,8 @@ icon:
 color: green
 ---
 
+**Note: Linux support is currently very limited as we don't have anyone available to maintain it, issues are expected.**
+
 [Windows Guide](../compiling/)
 
 The purpose of this document is to:
@@ -15,7 +17,7 @@ The purpose of this document is to:
 
 2. Document important details and common issues
 
-This guide has been tested on `Debian` and `Ubuntu`.
+We currently run all our tests on **Ubuntu 20.04**, and the commands listed here assume you are using this version.
 
 ## Prerequisites
 Simply run these commands in a terminal. Before anything else, run `sudo apt-get update`.
@@ -28,8 +30,13 @@ sudo apt-get install curl
 
 #### NodeJS
 ```
-sudo curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=18
+sudo apt-get update
+sudo apt-get install nodejs -y
 ```
 
 #### Git:
@@ -37,9 +44,18 @@ sudo apt-get install -y nodejs
 sudo apt-get install git
 ```
 
+### Cmake:
+
+```
+wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
+sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ focal main'
+sudo apt update
+sudo apt install cmake
+```
+
 #### TrinityCore Dependencies
 ```
-sudo apt-get install git clang cmake make gcc g++ libmariadbclient-dev libssl-dev libbz2-dev libreadline-dev libncurses-dev libboost-all-dev mariadb-server p7zip libmariadb-client-lgpl-dev-compat
+sudo apt-get install git clang make gcc g++ libmariadbclient-dev libssl-dev libbz2-dev libreadline-dev libncurses-dev libboost-all-dev mariadb-server p7zip libmariadb-client-lgpl-dev-compat
 ```
 
 #### Misc Dependencies
@@ -59,9 +75,8 @@ When building TSWoW from source, we are concerned about three directories:
 
 The source, build and install directories should all be **separate**. Do not place any of them inside any of the others. The recommended setup is to have a `tswow-root` containing all three folders.
 
-1. Run either of the following commands (_optionally in a new empty folder_):
-    - For bleeding edge: `git clone https://github.com/tswow/tswow.git --recurse`
-    - For the latest release `git clone https://github.com/tswow/tswow.git --recurse --branch v0.12-beta` (change tag)
+1. Run the following command (_optionally in a new empty folder_):
+    - `git clone https://github.com/tswow/tswow.git --recurse`
     - This will create the `source` directory, called "tswow".
     - This download is expected to take some time.
     - It is recommended to start developing on the latest release rather than the bleeding edge, as linux is often only tested for new releases.
