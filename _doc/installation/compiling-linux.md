@@ -17,7 +17,7 @@ The purpose of this document is to:
 
 2. Document important details and common issues
 
-We currently run all our tests on **Ubuntu 20.04**, and the commands listed here assume you are using this version.
+We currently run all our tests on **Ubuntu 22.04**, and the commands listed here assume you are using this version.
 
 ## Prerequisites
 Simply run these commands in a terminal. Before anything else, run `sudo apt-get update`.
@@ -45,7 +45,7 @@ sudo apt-get install git
 
 ```
 wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
-sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ focal main'
+sudo apt-add-repository 'deb https://apt.kitware.com/ubuntu/ jammy main'
 sudo apt update
 sudo apt install cmake
 ```
@@ -53,11 +53,6 @@ sudo apt install cmake
 #### TrinityCore Dependencies
 ```
 sudo apt-get install git clang make gcc g++ libmariadbclient-dev libssl-dev libbz2-dev libreadline-dev libncurses-dev libboost-all-dev mariadb-server p7zip libmariadb-client-lgpl-dev-compat
-```
-
-#### Misc Dependencies
-```
-sudo apt-get install bzip2-devel p7zip-full
 ```
 
 ### Building TSWoW
@@ -108,7 +103,7 @@ sudo service mysql start
 
 Run the following command to create a new mysql user (replacing 'tswow' and 'password' with your own values):
 ```
-sudo mysql -u root -e "SET old_passwords=0; CREATE USER 'tswow' IDENTIFIED BY 'password'; GRANT ALL PRIVILEGES ON *.* TO 'tswow';"
+sudo mysql -u root -e "CREATE USER 'tswow' IDENTIFIED BY 'password'; GRANT ALL PRIVILEGES ON *.* TO 'tswow';"
 ```
 
 Inside your `install` directory, open `node.conf` and replace all instances of "tswow;password" with your own username/password created above. `Database.WorldSource`, `Database.WorldDest`, `Database.Auth` and `Database.Characters` should all be changed.
