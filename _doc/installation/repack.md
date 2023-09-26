@@ -34,7 +34,7 @@ You will need to install the following programs:
     - <span>When installing Visual Studio, you will be asked to choose what packages to install in a window similar to the following. The **only** package that is necessary for building Live Scripts is `Desktop development with C++`, as shown below. The only toggle you need to select is in the red square, everything else can use default settings.</span>
 
 {:refdef: style="text-align: center;"}
-![](../vs-installer.png)
+![](vs-installer.png)
 {:refdef}
 
 ## Installation
