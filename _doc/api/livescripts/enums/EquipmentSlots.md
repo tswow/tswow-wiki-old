@@ -1,0 +1,30 @@
+---
+title: EquipmentSlots
+---
+
+
+
+
+
+### Enumeration Members
+- BACK
+- BODY
+- CHEST
+- END
+- FEET
+- FINGER1
+- FINGER2
+- HANDS
+- HEAD
+- LEGS
+- MAINHAND
+- NECK
+- OFFHAND
+- RANGED
+- SHOULDERS
+- START
+- TABARD
+- TRINKET1
+- TRINKET2
+- WAIST
+- WRISTS

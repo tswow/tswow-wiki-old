@@ -1,0 +1,20 @@
+---
+title: AuraEffectHandleMode
+---
+
+
+
+
+
+### Enumeration Members
+- CHANGE\_AMOUNT
+- CHANGE\_AMOUNT\_MASK
+- CHANGE\_AMOUNT\_SEND\_FOR\_CLIENT\_MASK
+- DEFAULT
+- REAL
+- REAL\_OR\_REAPPLY\_MASK
+- REAPPLY
+- SEND\_FOR\_CLIENT
+- SEND\_FOR\_CLIENT\_MASK
+- SKILL
+- STAT

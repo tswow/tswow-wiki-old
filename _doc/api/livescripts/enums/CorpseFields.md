@@ -1,0 +1,20 @@
+---
+title: CorpseFields
+---
+
+
+
+
+
+### Enumeration Members
+- END
+- FIELD\_BYTES\_1
+- FIELD\_BYTES\_2
+- FIELD\_DISPLAY\_ID
+- FIELD\_DYNAMIC\_FLAGS
+- FIELD\_FLAGS
+- FIELD\_GUILD
+- FIELD\_ITEM
+- FIELD\_OWNER
+- FIELD\_PAD
+- FIELD\_PARTY

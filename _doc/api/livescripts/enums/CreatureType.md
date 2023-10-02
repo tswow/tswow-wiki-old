@@ -1,0 +1,22 @@
+---
+title: CreatureType
+---
+
+
+
+
+
+### Enumeration Members
+- BEAST
+- CRITTER
+- DEMON
+- DRAGONKIN
+- ELEMENTAL
+- GAS\_CLOUD
+- GIANT
+- HUMANOID
+- MECHANICAL
+- NON\_COMBAT\_PET
+- NOT\_SPECIFIED
+- TOTEM
+- UNDEAD

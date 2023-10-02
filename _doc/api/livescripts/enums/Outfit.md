@@ -1,0 +1,29 @@
+---
+title: Outfit
+---
+
+
+
+
+
+### Enumeration Members
+- ARMOR
+- BACK
+- BODY
+- CHEST
+- CLASS
+- EVERYTHING
+- FEET
+- GEAR
+- GUILD
+- HANDS
+- HEAD
+- LEGS
+- MAINHAND
+- OFFHAND
+- RANGED
+- SHOULDERS
+- SOUND\_ID
+- WAIST
+- WEAPONS
+- WRISTS

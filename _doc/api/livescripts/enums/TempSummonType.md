@@ -1,0 +1,17 @@
+---
+title: TempSummonType
+---
+
+
+
+
+
+### Enumeration Members
+- CORPSE\_DESPAWN
+- CORPSE\_TIMED\_DESPAWN
+- DEAD\_DESPAWN
+- MANUAL\_DESPAWN
+- TIMED\_DESPAWN
+- TIMED\_DESPAWN\_OUT\_OF\_COMBAT
+- TIMED\_OR\_CORPSE\_DESPAWN
+- TIMED\_OR\_DEAD\_DESPAWN
